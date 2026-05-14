@@ -270,25 +270,28 @@
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-2xl font-bold mb-8 italic tracking-tighter">Mari Terhubung di Media Sosial</h2>
             
-           <div class="flex justify-center gap-8 mb-12">
+            <div class="flex justify-center gap-8 mb-12">
                 <a href="https://www.instagram.com/mrsyiiee_?igsh=MWc3bDZzZmR5djg2ZQ==" target="_blank" class="flex flex-col items-center gap-2 group">
                     <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-pink-50 group-hover:border-pink-200 transition-all">
                         <i data-lucide="instagram" class="w-6 h-6 text-slate-800 group-hover:text-pink-600"></i>
                     </div>
                     <span class="text-xs font-bold text-slate-500">Instagram</span>
                 </a>
+
                 <a href="https://www.facebook.com/share/1E2e8DnxE2/" target="_blank" class="flex flex-col items-center gap-2 group">
                     <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-pink-50 group-hover:border-pink-200 transition-all">
                         <i data-lucide="facebook" class="w-6 h-6 text-slate-800 group-hover:text-pink-600"></i>
                     </div>
                     <span class="text-xs font-bold text-slate-500">Facebook</span>
                 </a>
+
                 <a href="https://www.linkedin.com/in/marsya-amalia-1327b6380" target="_blank" class="flex flex-col items-center gap-2 group">
                     <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-pink-50 group-hover:border-pink-200 transition-all">
                         <i data-lucide="linkedin" class="w-6 h-6 text-slate-800 group-hover:text-pink-600"></i>
                     </div>
                     <span class="text-xs font-bold text-slate-500">LinkedIn</span>
                 </a>
+
                 <a href="mailto:marsyaamalia505@gmail.com" class="flex flex-col items-center gap-2 group">
                     <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-pink-50 group-hover:border-pink-200 transition-all">
                         <i data-lucide="mail" class="w-6 h-6 text-slate-800 group-hover:text-pink-600"></i>
@@ -303,41 +306,27 @@
         </div>
     </footer>
 
-    <!-- Notification Overlay -->
     <div id="notif" class="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 bg-slate-900 text-white rounded-full text-sm font-medium opacity-0 pointer-events-none transition-all duration-300 z-[100]">
         Email berhasil disalin ke clipboard!
     </div>
+
     <script>
+        // Perintah ini yang memunculkan ikon
         lucide.createIcons();
 
         function copyEmail() {
             const email = "marsyaamalia505@gmail.com";
-            const textArea = document.createElement("textarea");
-            textArea.value = email;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
+            navigator.clipboard.writeText(email);
             
             const notif = document.getElementById('notif');
             notif.classList.remove('opacity-0');
-            notif.classList.add('opacity-100', 'translate-y-[-10px]');
+            notif.classList.add('opacity-100');
             
             setTimeout(() => {
                 notif.classList.add('opacity-0');
-                notif.classList.remove('opacity-100', 'translate-y-[-10px]');
+                notif.classList.remove('opacity-100');
             }, 3000);
         }
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-sm', 'border-slate-200');
-            } else {
-                nav.classList.remove('shadow-sm', 'border-slate-200');
-            }
-        });
     </script>
 </body>
 </html>
